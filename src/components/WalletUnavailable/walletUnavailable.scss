@@ -1,0 +1,50 @@
+@import "../../assets/variables";
+
+.wallet-unavailable {
+  display: grid;
+  padding: $spacing;
+  grid-gap: $spacing-medium;
+  justify-items: center;
+  justify-self: center;
+  align-self: center;
+  max-width: 420px;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    max-width: initial;
+  }
+
+  p {
+    font-family: $font-family;
+    color: $text-medium;
+    font-size: $small;
+
+    @media (min-width: $tablet) {
+      font-size: $medium;
+    }
+  }
+
+  .wallets {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 28px);
+    width: 100%;
+    grid-gap: $spacing-smaller;
+    justify-self: center;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(auto-fit, 48px);
+      grid-gap: $spacing-small;
+
+      svg {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+}

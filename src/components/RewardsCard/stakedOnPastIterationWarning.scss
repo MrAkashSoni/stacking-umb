@@ -1,0 +1,35 @@
+@import "../../assets/variables";
+
+.staked-on-past-iteration-warning {
+  display: grid;
+  grid-template-rows: 0 1fr repeat(3, min-content);
+  grid-gap: $spacing-medium;
+
+  &__text {
+    font-family: $font-family;
+    font-size: $small;
+    color: $text-medium;
+
+    span {
+      font-family: $title-font-family;
+      font-weight: 700;
+      color: $primary;
+    }
+  }
+
+  &__redirects {
+    display: grid;
+    grid-template-columns: 180px 180px;
+    grid-gap: $spacing-small;
+    justify-self: center;
+    align-self: end;
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: 120px;
+    grid-gap: $spacing-small;
+    justify-self: center;
+    align-self: end;
+  }
+}

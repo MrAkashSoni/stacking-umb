@@ -1,0 +1,183 @@
+@import "../../../assets/variables";
+
+.processing {
+  display: grid;
+  height: 100%;
+  padding: $spacing-large 0;
+  padding-top: $spacing;
+  justify-items: center;
+  grid-template-rows: 50px 2fr 26px 1fr;
+  grid-gap: $spacing-tiny;
+
+  @media (min-width: $tablet) {
+    padding: $spacing 0;
+  }
+
+  .queue,
+  .error {
+    z-index: 3;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+  }
+
+  .queue {
+    border: 5px solid $primary;
+  }
+
+  .error {
+    border: 5px solid $error;
+  }
+
+  .waiting {
+    z-index: 3;
+    position: relative;
+    background: $highlight;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+
+    &::after {
+      z-index: 3;
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      animation-duration: 750ms;
+      top: calc(50% - 20px);
+      left: calc(50% - 20px);
+      animation-name: ripple-waiting;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+      animation-timing-function: ease-in-out;
+
+      @keyframes ripple-waiting {
+        from {
+          background: rgba(0, 0, 0, 0);
+        }
+
+        to {
+          background: rgba(41, 204, 151, 0.2);
+        }
+      }
+    }
+
+    &--small {
+      height: 10px;
+      width: 10px;
+      border-radius: 10px;
+
+      &::after {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        top: calc(50% - 10px);
+        left: calc(50% - 10px);
+      }
+    }
+  }
+
+  &__title {
+    max-width: 320px;
+    justify-self: center;
+    text-align: center;
+  }
+
+  p {
+    font-family: $font-family;
+    font-size: $tinier;
+    color: $text-medium;
+
+    @media (min-width: $mobile-large) {
+      font-size: $tiny;
+    }
+
+    a {
+      text-decoration: none;
+      color: $highlight;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__steps {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 20px 1fr;
+    width: 100%;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    max-width: 220px;
+
+    @media (min-width: $mobile-large) {
+      max-width: 280px;
+    }
+
+    .step {
+      width: 20px;
+      height: 20px;
+      position: relative;
+
+      &__label {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-tiny;
+        font-size: $tinier;
+        font-weight: 700;
+        position: absolute;
+        text-align: center;
+        max-width: 90px;
+        left: calc(100% - 42px);
+        top: 35px;
+
+        @media (min-width: $desktop) {
+          max-width: 110px;
+          width: 110px;
+          left: calc(100% - 65px);
+        }
+      }
+
+      &__comment {
+        font-weight: 400;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+
+      &__path {
+        z-index: 2;
+        width: calc(100% + 2px);
+        height: 5px;
+        background-color: $primary;
+        justify-self: center;
+
+        &--SUCCESS {
+          background-color: $highlight;
+        }
+
+        &--ERROR {
+          background-color: $error;
+        }
+      }
+    }
+  }
+
+  &__explorer {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: $spacing-smaller;
+    align-items: center;
+    text-align: center;
+  }
+
+  .button {
+    grid-row-start: -1;
+  }
+}

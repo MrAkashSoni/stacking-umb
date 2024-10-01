@@ -1,0 +1,116 @@
+@import "../../../assets/variables";
+
+.footer {
+  display: flex;
+  justify-content: center;
+
+  background-color: $primary-dark;
+  padding: $xlarge 0 176px;
+
+  &__full-logo {
+    margin-left: $spacing-smaller;
+
+    @media (min-width: $tablet) {
+      margin-left: 0;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    max-width: $desktop-large;
+    padding: 0 $spacing-small;
+
+    @media (min-width: $tablet) {
+      padding-left: $spacing-xlarge;
+    }
+
+    @media (min-width: $tablet) {
+      padding: 0 $spacing-max;
+    }
+  }
+
+  &__section-wrapper {
+    display: grid;
+    justify-content: start;
+    grid-auto-flow: row;
+    gap: $spacing-small;
+
+    @media (min-width: $tablet) {
+      justify-content: center;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      grid-auto-columns: 1fr;
+      gap: $spacing;
+    }
+
+    @media (min-width: $desktop) {
+      grid-template-columns: 2fr 3fr;
+      gap: 0;
+      padding-left: $spacing;
+    }
+  }
+
+  &__sections-group {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $desktop) {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    margin-top: $spacing;
+
+    & h4 {
+      font-size: $smaller;
+      margin-bottom: $spacing-smaller;
+      color: $text-header;
+      font-family: $title-font-family;
+    }
+  }
+
+  &__section-items {
+    display: grid;
+    gap: $spacing-smaller;
+  }
+
+  &__anchor {
+    cursor: pointer;
+    text-decoration: none;
+    color: $text-header;
+    opacity: 0.8;
+    font-family: $font-family;
+
+    & svg {
+      margin-right: $spacing-small;
+    }
+
+    & span {
+      font-size: $tiny;
+    }
+
+    &:hover {
+      opacity: 1;
+
+      & svg {
+        box-shadow: 0px 3.6px 18px #3853ff;
+      }
+
+      & span {
+        text-shadow: 0px 3.6px 18px #3853ff;
+        font-weight: 700;
+      }
+    }
+  }
+}

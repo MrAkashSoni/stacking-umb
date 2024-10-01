@@ -1,0 +1,21 @@
+@import "../../../assets/variables";
+
+.tabs{
+  display: grid;
+  grid-template-rows: min-content 1fr;
+
+  &__header{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  &__content{
+    display: flex;
+    flex-direction:  column;
+
+    & > .processing {
+        height: 605px;
+    }
+  }
+}

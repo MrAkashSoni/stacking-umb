@@ -1,0 +1,9 @@
+@import "../../../assets/variables";
+
+.version {
+  font-family: $font-family;
+  font-size: $tiny;
+  z-index: 7;
+  color: $highlight;
+  text-shadow: 1px 0px 12px $primary;
+}

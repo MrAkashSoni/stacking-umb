@@ -1,0 +1,137 @@
+@import "../../../assets/variables";
+
+.url-button {
+  text-decoration: none;
+}
+
+.button {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: $font-family;
+  font-weight: 600;
+  font-size: $tiny;
+  line-height: 19.36px;
+  border-radius: $border-radius-button;
+  border: 1px solid $primary;
+  outline: none;
+  padding: $spacing-smaller $spacing;
+  transition: background-color 250ms ease, box-shadow 250ms ease,
+    color 250ms ease, text-shadow 250ms ease;
+  height: 43px;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  grid-gap: $spacing-tiny;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  &--reverse {
+
+    img,
+    svg {
+      grid-column-start: 2;
+    }
+  }
+
+  &:active:enabled {
+    box-shadow: 0px 8px 8px rgba(43, 40, 183, 0.25),
+      0px 2px 18px rgba(43, 40, 183, 0.4);
+  }
+
+  &:hover:enabled {
+    box-shadow: 0px 4px 4px rgba(43, 40, 183, 0.25),
+      0px 1px 9px rgba(43, 40, 183, 0.4);
+  }
+
+  &--primary {
+    background-color: $primary;
+
+    &:hover:enabled {
+      color: $primary;
+      background-color: rgba(255, 255, 255, 0);
+
+      & svg path,
+      & svg rect {
+        fill: $primary;
+      }
+    }
+  }
+
+  &--secondary {
+    background-color: rgba(255, 255, 255, 0);
+    color: $primary;
+
+    &:hover:enabled {
+      color: white;
+      background-color: $primary;
+
+      & svg rect,
+      & svg path {
+        fill: white;
+      }
+    }
+  }
+
+  &--plain {
+    padding: 0;
+    height: initial;
+    background: rgba(0, 0, 0, 0);
+    color: $text-secondary;
+    font-weight: 400;
+    border: none;
+    font-size: $tiny;
+
+    &:hover:enabled,
+    &:active:enabled {
+      background: rgba(0, 0, 0, 0);
+      color: $primary;
+      box-shadow: none;
+    }
+
+    &:active {
+      text-shadow: 0px 1px 1px rgba(43, 40, 183, 0.25),
+        0px 6px 10px rgba(43, 40, 183, 0.4);
+    }
+  }
+
+  &--warn {
+    background-color: $error;
+    color: white;
+    border: 1px solid $error;
+
+    &:hover:enabled {
+      color: $error;
+      background-color: white;
+
+      & svg rect,
+      & svg path {
+        fill: white;
+      }
+    }
+  }
+
+  &--weak {
+    color: $text-weak;
+    background-color: white;
+    border: 1px solid $text-weak;
+
+    &:hover:enabled {
+      border: 1px solid $text-weak;
+      background-color: $text-weak;
+      color: white;
+
+      & svg rect,
+      & svg path {
+        fill: white;
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}

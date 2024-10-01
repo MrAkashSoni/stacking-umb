@@ -1,0 +1,7 @@
+@import "../../../assets/variables";
+
+.card {
+  box-shadow: $box-shadow;
+  background: white;
+  border-radius: $border-radius-large;
+}

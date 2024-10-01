@@ -1,0 +1,75 @@
+{
+  "name": "leo",
+  "version": "4.10.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "description": "Front-End for Umbrella Network Staking Portal",
+  "private": true,
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@binance-chain/bsc-connector": "^1.0.0",
+    "@tanstack/react-query": "^4.10.1",
+    "@umb-network/toolbox": "^0.4.0",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "@web3-react/walletconnect-connector": "~6.2.0",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.16.1",
+    "ethers": "^5.0.18",
+    "formik": "^2.2.6",
+    "i18next": "^20.1.0",
+    "i18next-browser-languagedetector": "^6.1.0",
+    "int64-buffer": "^1.0.0",
+    "lodash": "^4.17.20",
+    "prettier": "^2.1.2",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.27.1",
+    "react": "^17.0.1",
+    "react-collapse": "^5.1.0",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-countdown": "^2.3.2",
+    "react-device-detect": "^1.14.0",
+    "react-dom": "^17.0.1",
+    "react-highlight-words": "^0.17.0",
+    "react-i18next": "^11.8.12",
+    "react-icons": "^4.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.4",
+    "react-scroll-to-component": "^1.0.2",
+    "react-scrolllock": "^5.0.1",
+    "react-spinners": "^0.10.4",
+    "sass": "^1.35.1",
+    "styled-components": "^5.2.0",
+    "wagmi": "^0.11.7",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "cypress": "^5.4.0",
+    "eslint-plugin-prettier": "^3.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "test": "react-scripts test --verbose",
+    "eject": "react-scripts eject",
+    "test:e2e": "cypress open",
+    "test:lint": "yarn eslint ./src"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
+}

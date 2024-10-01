@@ -1,0 +1,38 @@
+@import "../../assets/variables";
+
+.submit-transfer-layer {
+  font-family: $font-family;
+
+  &__token-info {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-self: center;
+    gap: $tinier;
+
+    margin: $medium 0;
+  }
+
+  &__token-amount,
+  &__asset {
+    font-weight: 700;
+    font-size: $medium;
+  }
+
+  &__token-amount {
+    padding-right: $large;
+  }
+
+  &__asset-icon {
+    width: 40px;
+  }
+
+  &__instructions span {
+    font-weight: 600;
+  }
+
+  .cta-button {
+    margin-top: $large;
+    max-width: unset !important;
+  }
+}

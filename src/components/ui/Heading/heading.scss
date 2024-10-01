@@ -1,0 +1,66 @@
+@import "../../../assets/variables";
+
+.heading {
+  line-height: 155%;
+  font-family: $title-font-family;
+
+  &--1 {
+    font-size: $medium;
+
+    @media (min-width: $tablet) {
+      font-size: $larger;
+
+      span {
+        &::before {
+          bottom: 5px;
+          width: calc(100% + 14px);
+          left: -7px;
+        }
+      }
+    }
+  }
+
+  &--2 {
+    font-size: $small;
+
+    @media (min-width: $tablet) {
+      font-size: $large;
+    }
+  }
+
+  &--3 {
+    font-size: $small;
+
+    @media (min-width: $tablet) {
+      font-size: $medium;
+    }
+  }
+
+  &--4 {
+    font-size: $tiny;
+
+    @media (min-width: $tablet) {
+      font-size: $small;
+    }
+  }
+
+  &--primary {
+    color: $primary !important;
+  }
+
+  &--secondary {
+    color: $primary-dark !important;
+  }
+
+  &--plain {
+    color: $text-medium !important;
+  }
+
+  &--title {
+    color: $title !important;
+  }
+
+  &--highlight {
+    color: $highlight !important;
+  }
+}

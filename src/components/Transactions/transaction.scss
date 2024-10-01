@@ -1,0 +1,139 @@
+@import '../../assets/variables';
+
+.transaction {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 65px 1fr;
+  padding: $spacing-small 0;
+  grid-gap: $spacing-smaller;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: initial;
+    grid-gap: 0;
+    grid-auto-columns: 1fr;
+  }
+
+  &__label {
+    grid-column-start: 1;
+    font-family: $font-family;
+    color: $primary;
+    font-size: $tinier;
+
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__info {
+    grid-column-start: 2;
+    font-family: $font-family;
+    color: $text-medium;
+    font-size: $tinier;
+
+    @media (min-width: $tablet) {
+      grid-column-start: initial;
+    }
+
+    @media (min-width: $desktop) {
+      font-size: $tiny;
+    }
+  }
+
+  .status {
+    display: grid;
+    grid-template-columns: 100px max-content;
+    grid-gap: $spacing-small;
+    align-items: center;
+
+    @media (min-width: $tablet) {
+      grid-template-columns: 130px max-content;
+    }
+
+    a {
+      font-family: $title-font-family;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: $tinier;
+      line-height: 19px;
+      color: $highlight;
+
+      @media (min-width: $desktop) {
+        font-size: $tiny;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .icon {
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        top: -5px;
+        left: -5px;
+      }
+
+      &--error {
+        background-color: $error;
+
+        &:before {
+          opacity: 0.2;
+          background-color: $error;
+        }
+      }
+
+      &--success {
+        background-color: $success;
+
+        &:before {
+          opacity: 0.2;
+          background-color: $success;
+        }
+      }
+
+      &--waiting {
+        background-color: $warning;
+
+        &::before {
+          background-color: $warning;
+          animation-duration: 750ms;
+          animation-name: ripple;
+          animation-iteration-count: infinite;
+          animation-direction: alternate-reverse;
+          animation-timing-function: ease-in-out;
+
+          @keyframes ripple {
+            from {
+              opacity: 0;
+            }
+
+            to {
+              opacity: 0.2;
+            }
+          }
+        }
+      }
+
+      &:before {
+        position: absolute;
+      }
+    }
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $primary;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}

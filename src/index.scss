@@ -1,0 +1,81 @@
+@import 'assets/variables';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: 'Milliard';
+  src: local('Milliard'), url("./fonts/Milliard Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Satoshi'), url("./fonts/Satoshi-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Satoshi'), url("./fonts/Satoshi-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Satoshi'), url("./fonts/Satoshi-Medium.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Satoshi'), url("./fonts/Satoshi-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Satoshi'), url("./fonts/Satoshi-Black.woff") format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::selection {
+    color: white;
+    background: $highlight;
+  }
+
+  &::-moz-selection {
+    color: white;
+    background: $highlight;
+  }
+}
+
+main {
+  background-image: url("/background.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+
+  background-size: 250%;
+
+  @media (min-width: $tablet) {
+    background-size: 150%;
+  }
+
+  @media (min-width: $desktop-larger) {
+    background-size: initial;
+  }
+}

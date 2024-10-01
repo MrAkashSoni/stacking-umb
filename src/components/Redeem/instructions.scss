@@ -1,0 +1,45 @@
+@import "../../assets/variables";
+
+.redeem-instructions {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: $spacing;
+
+  padding: $spacing-small $spacing;
+
+  .heading {
+    padding-left: $spacing-small;
+  }
+
+  ol {
+    list-style-position: inside;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-small;
+  }
+
+  li,
+  p {
+    font-family: $font-family;
+    color: $text-medium;
+    font-size: $tinier;
+    line-height: $line-height;
+
+    & span {
+      font-weight: 700;
+    }
+
+    @media (min-width: $tablet) {
+      font-size: $tiny;
+    }
+  }
+
+  p {
+    text-indent: $spacing-medium;
+
+    &:first-of-type {
+      margin-top: $spacing-small;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import "../../../assets/variables";
+
+.wallets-layer {
+  @media (min-width: $tablet) {
+    width: 720px !important;
+  }
+}
+
+.wallets-layer-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  grid-gap: $spacing-small;
+  justify-content: center;
+  overflow: scroll;
+  grid-auto-rows: min-content;
+  align-content: center;
+
+  @media (min-width: $mobile-large) {
+    grid-template-columns: repeat(3, 150px);
+    column-gap: $spacing-medium;
+    row-gap: $spacing-medium;
+    overflow: initial;
+  }
+
+  @media (min-width: $tablet) {
+    padding: $spacing;
+    grid-gap: $spacing-large;
+  }
+
+  .wallet-container {
+    height: 150px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-gap: 0;
+    grid-template-rows: 0.33fr 1fr 1fr;
+    background: $background;
+    border: $border;
+    color: black;
+    text-align: center;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: $tinier;
+
+    @media (min-width: $tablet) {
+      font-size: $tiny;
+    }
+
+    svg {
+      grid-row-start: 2;
+      height: 50px;
+      width: 50px;
+      margin: 0;
+
+      @media (min-width: $tablet) {
+        height: 75px;
+        width: 75px;
+      }
+    }
+
+    &:active:enabled, &:hover:enabled  {
+      color: black;
+      background: $background-list;
+      border: 1px $background-light solid;
+    }
+  }
+}

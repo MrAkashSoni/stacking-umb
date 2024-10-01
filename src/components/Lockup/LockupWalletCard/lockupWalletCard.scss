@@ -1,0 +1,129 @@
+@import "../../../assets/variables";
+
+.lockup-wallet-card {
+  position: relative;
+  display: grid;
+  width: 100%;
+  grid-gap: $spacing-medium;
+  padding: $spacing $spacing-smaller $spacing-medium;
+  grid-auto-rows: min-content;
+  align-items: center;
+
+  @media (min-width: $tablet) {
+    padding: $spacing-medium;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-rows: 72px 70px 1fr min-content min-content;
+    padding-top: 0;
+  }
+
+  .main-balances {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-gap: $spacing-tiny;
+    grid-template-columns: 22px max-content;
+    grid-template-rows: repeat(3, auto);
+    font-family: $title-font-family;
+    font-size: $tiny;
+    color: $title;
+    line-height: $line-height;
+
+    .card-icon,
+    .label,
+    .info-box {
+      grid-row-start: 1;
+    }
+
+    .label {
+      grid-column-start: 2;
+    }
+
+    .info-box:first-of-type {
+      grid-row-start: 2;
+      grid-column-start: 2;
+    }
+
+    .info-box:last-of-type {
+      grid-column-start: 2;
+      grid-row-start: 3;
+    }
+
+    @media (min-width: $tablet) {
+      grid-template-rows: 1fr;
+      grid-template-columns: 22px repeat(4, max-content);
+
+      .card-icon,
+      .label,
+      .info-box,
+      .info-box:first-of-type,
+      .info-box:last-of-type {
+        grid-row-start: initial;
+        grid-column-start: initial;
+      }
+    }
+
+    span,
+    .reward-token {
+      color: $text-medium;
+    }
+
+    .divisor {
+      display: none;
+      width: 0px;
+      height: 20px;
+      background-color: $highlight;
+      border: 1px solid;
+      border-image-source: linear-gradient(
+        180deg,
+        rgba(6, 243, 152, 0) 0%,
+        #06f398 47.74%,
+        rgba(6, 243, 152, 0) 100%
+      );
+      filter: blur(2px);
+      -webkit-filter: blur(2px);
+      margin: 0 $spacing-tiny;
+
+      @media (min-width: $tablet) {
+        display: initial;
+      }
+    }
+  }
+
+  &__info-wrapper {
+    display: grid;
+    width: 100%;
+    background-color: $background;
+    border-radius: $border-radius-larger;
+    padding: $spacing $spacing $spacing-small;
+    grid-gap: $spacing-smaller;
+
+    .divisor {
+      height: 1px;
+      width: 100%;
+      background-color: $primary-dark;
+    }
+
+    .info {
+      font-family: $title-font-family;
+      font-size: $tinier;
+      color: $text-weak;
+      line-height: $line-height;
+
+      @media (min-width: $tablet) {
+        font-size: $smaller;
+      }
+
+      span {
+        color: $title;
+      }
+    }
+  }
+
+  &__actions {
+    display: grid;
+    justify-items: center;
+    grid-gap: $spacing-small;
+  }
+}

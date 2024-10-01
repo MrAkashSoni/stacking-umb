@@ -1,0 +1,92 @@
+$primary: #454EEC;
+$primary-dark: #0A0842;
+$background: #F2F6F8;
+$background-light: #EAF0F7;
+$background-lighter: #F2F2F2;
+$background-pop-ups: #F6F9FB;
+$background-list: #E8EAEB;
+$background-option: #C4C4C4;
+$separator: #161B43;
+$highlight: #87FA91;
+$text: #000;
+$text-header: #FFFFFF;
+$text-label: #828282;
+$text-medium: #1B1C1C;
+$text-weak: #435465;
+$text-weaker: #8C9FB1;
+$text-weakest: #DFE0EB;
+$text-secondary: #7176AA;
+$title: #0E0B93;
+$success: #29CC97;
+$warning: #FFBE4F;
+$error: #E31C3D;
+$transparent: rgba(0, 0, 0, 0);
+
+$title-font-family: 'Satoshi';
+$font-family: 'Inter';
+
+$xlarge: 50px;
+$larger: 40px;
+$large: 34px;
+$medium: 24px;
+$small: 20px;
+$smaller: 18px;
+$tiny: 16px;
+$label: 14px;
+$tinier: 12px;
+$tiniest: 8px;
+$line-height: 155.14%;
+
+$border-radius: 2px;
+$border-radius-button: 28px;
+$border-radius-input: 3px;
+$border-radius-large: 5px;
+$border-radius-larger: 8px;
+$box-shadow: 0px 1px 15px -2px rgba(0, 0, 0, 0.25);
+$border: 1px solid $text-weakest;
+$border-input: 1px solid $text-weaker;
+$border-checked: 1px solid $primary;
+$border-list: 1px solid $background-list;
+
+$spacing-max: 92px;
+$spacing-xlarge: 74px;
+$spacing-larger: 64px;
+$spacing-large: 42px;
+$spacing-medium: 30px;
+$spacing: 24px;
+$spacing-small: 18px;
+$spacing-smaller: 12px;
+$spacing-tiny: 6px;
+$spacing-tiniest: 3px;
+
+$mobile: 320px;
+$mobile-large: 560px;
+$tablet: 768px;
+$tablet-large: 1024px;
+$desktop: 1248px;
+$desktop-large: 1366px;
+$desktop-larger: 1440px;
+$desktop-k: 2120px;
+$content-tablet: 627px;
+$content: 1076px;
+
+%scroll {
+  scrollbar-color: $text-weaker $transparent;
+
+  &::-webkit-scrollbar-track {
+    border-radius: $border-radius-large;
+    background-color: white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $border-radius-large;
+    background-color: $text-weaker;
+  }
+
+  &::-webkit-scrollbar {
+    margin-left: $spacing-tiny;
+    width: $spacing-tiny;
+    height: $spacing-tiny;
+    background-color: white;
+  }
+}

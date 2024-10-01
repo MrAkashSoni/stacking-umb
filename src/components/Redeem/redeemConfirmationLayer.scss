@@ -1,0 +1,75 @@
+@import "../../assets/variables";
+
+.submit-redeem-layer {
+  font-family: $font-family;
+  justify-items: center;
+
+  &__token-info {
+    display: grid;
+    grid-template-columns: 2fr min-content 2fr;
+    row-gap: $spacing-small;
+    column-gap: $spacing-tiny;
+
+    align-items: center;
+
+    margin: $spacing;
+
+    .token-data {
+      display: grid;
+      grid-auto-flow: row;
+      gap: $spacing-smaller;
+      align-items: center;
+
+      .direction {
+        font-family: $font-family;
+        text-align: center;
+      }
+
+      .info-box {
+        display: flex;
+        justify-content: center;
+      }
+
+      .amount {
+        justify-self: center;
+        align-self: center;
+
+        font-family: $title-font-family;
+        font-size: $small;
+      }
+
+      .symbol {
+        display: flex;
+        align-items: center;
+        gap: $spacing-tiny;
+
+        justify-self: center;
+
+        font-family: $title-font-family;
+
+        & img {
+          width: 35px;
+        }
+      }
+    }
+
+    @media (min-width: $tablet) {
+      .token-data {
+        justify-self: center;
+
+        .amount {
+          font-size: $larger;
+        }
+      }
+    }
+  }
+
+  &__instructions span {
+    font-weight: 600;
+  }
+
+  .cta-button {
+    margin-top: $large;
+    max-width: unset !important;
+  }
+}

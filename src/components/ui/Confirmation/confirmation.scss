@@ -1,0 +1,34 @@
+@import "../../../assets/variables";
+
+.confirmation-layer {
+  display: grid;
+  grid-gap: $spacing;
+  grid-display-rows: 1fr min-content;
+
+  &__content {
+    display: grid;
+    grid-gap: $spacing;
+    font-family: $font-family;
+    color: $text-medium;
+    font-size: $smaller;
+
+    &__wrapper {
+      display: grid;
+      grid-gap: $spacing;
+      grid-auto-rows: min-content;
+    }
+
+    span {
+      font-family: $title-font-family;
+      color: $primary-dark;
+    }
+  }
+
+  &__actions {
+    display: grid;
+    align-self: end;
+    grid-template-columns: max-content max-content;
+    grid-gap: $spacing-small;
+    justify-content: center;
+  }
+}

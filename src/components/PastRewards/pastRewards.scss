@@ -1,0 +1,158 @@
+@import '../../assets/variables';
+
+.past-rewards {
+  display: grid;
+  grid-gap: $spacing-medium;
+
+  @media (min-width: $desktop) {
+    grid-gap: $spacing-max;
+  }
+
+  a {
+    text-decoration: none;
+    color: $highlight;
+    font-weight: bold;
+    font-size: $tinier;
+
+    @media (min-width: $tablet) {
+      font-size: $tiny;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__welcome-message {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    grid-gap: $spacing-larger;
+    width: 100%;
+
+    @media (min-width: $tablet) and (max-width: $desktop) {
+      width: $content-tablet;
+    }
+
+    .title {
+      display: grid;
+      grid-gap: $spacing-small;
+      justify-content: center;
+      justify-items: center;
+
+      .subtitle {
+        font-family: $title-font-family;
+        line-height: $line-height;
+        font-size: $small;
+        color: $primary;
+        text-align: center;
+
+        span {
+          color: $highlight;
+        }
+      }
+    }
+
+    .staking-info-container {
+      display: grid;
+      justify-self: center;
+      grid-gap: $spacing;
+      grid-template-rows: repeat(2, max-content);
+      width: 294px;
+
+      @media (min-width: $tablet) {
+        width: $content-tablet;
+      }
+
+      @media (min-width: $desktop) {
+        width: 100%;
+        grid-template-columns: repeat(2, 400px);
+      }
+    }
+
+    .staking-info {
+      display: grid;
+      max-width: $content;
+      padding: $spacing-smaller;
+      width: 100%;
+      height: 180px;
+      border-bottom: 8px solid $highlight;
+
+      &--token-contracts {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr;
+        grid-gap: $spacing;
+        align-items: center;
+
+        .divisor {
+          width: 1px;
+          height: 60px;
+          background-color: $highlight;
+          border: 1px solid;
+          border-image-source: linear-gradient(180deg, rgba(6, 243, 152, 0) 0%, #06F398 47.74%, rgba(6, 243, 152, 0) 100%);
+          filter: blur(2px);
+          -webkit-filter: blur(2px);
+        }
+      }
+
+      @media (min-width: $tablet) {
+        width: 100%;
+      }
+
+      @media (min-width: $desktop) {
+        padding: $spacing-medium;
+      }
+
+      .text {
+        font-family: $font-family;
+        align-self: center;
+        text-align: center;
+        max-width: 888px;
+        font-size: $tinier;
+        line-height: $line-height;
+
+        @media (min-width: $tablet) {
+          font-size: $tiny;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    width: calc(100vw - 24px);
+    padding: 0;
+    justify-items: center;
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
+    justify-self: center;
+    grid-gap: $spacing-medium;;
+    width: 100%;
+
+    @media (min-width: $desktop) {
+      width: 100%;
+      margin: 0;
+      max-width: $content;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .rewards-disclaimer {
+      width: 100%;
+      text-align: center;
+      font-family: $font-family;
+      color: $error;
+
+      span {
+        font-family: $title-font-family;
+      }
+
+      @media (min-width: $desktop) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    }
+  }
+}

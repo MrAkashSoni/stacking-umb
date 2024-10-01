@@ -1,0 +1,62 @@
+@import '../../../assets/variables';
+
+.transaction-message {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: $spacing-tiny;
+  align-items: center;
+
+  p {
+    font-family: $font-family;
+    font-size: $tinier;
+
+    @media (min-width: $tablet) {
+      font-size: $tiny;
+    }
+
+    a {
+      text-decoration: none;
+      color: $highlight;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .waiting {
+    z-index: 3;
+    position: relative;
+    background: $highlight;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+
+    &::after {
+      z-index: 3;
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      animation-duration: 750ms;
+      top: -5px;
+      left: -5px;
+      animation-name: ripple-transaction-message;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+      animation-timing-function: ease-in-out;
+
+      @keyframes ripple-transaction-message {
+        from {
+          background: rgba(0,0,0,0);
+        }
+
+        to {
+          background: rgba(41, 204, 151, 0.2);
+        }
+      }
+    }
+  }
+}

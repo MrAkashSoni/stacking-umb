@@ -1,0 +1,126 @@
+@import "../../../assets/variables";
+
+.lockup-withdraw-tab {
+  display: grid;
+  position: relative;
+  height: 584px;
+  grid-template-rows: min-content min-content 1px 1fr 1px 43px;
+  grid-gap: $spacing-small;
+  padding: $spacing $spacing-smaller $spacing-medium;
+
+  @media (min-width: $tablet) {
+    padding: $spacing-medium $spacing-large;
+  }
+
+  .title-wrapper {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    grid-gap: $spacing-tiny;
+    height: 40px;
+
+    img {
+      width: 30px !important;
+      justify-self: start !important;
+    }
+
+    .title {
+      font-family: $title-font-family;
+    }
+  }
+
+  .separator {
+    height: 1px;
+    width: 100%;
+    background-color: $text-weakest;
+  }
+
+  &__inputs {
+    align-content: center;
+    height: 100%;
+    display: grid;
+    grid-gap: $spacing;
+    grid-template-rows: max-content min-content;
+  }
+
+  &__pool-selector {
+    display: grid;
+    grid-gap: $spacing;
+    align-self: start;
+    height: 100%;
+    overflow-y: auto;
+    grid-auto-rows: min-content;
+    @extend %scroll;
+
+    .withdraw-option {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      grid-auto-rows: min-max(25px, min-content);
+      grid-gap: $spacing-small;
+      align-items: start;
+      user-select: none;
+      cursor: pointer;
+      background-color: $background-pop-ups;
+      padding: $spacing-small;
+
+      .info {
+        font-family: $font-family;
+        color: $text-medium;
+        font-size: $tiny;
+        font-weight: 600;
+
+        span {
+          font-family: $title-font-family;
+          color: $primary;
+        }
+
+        &--primary {
+          span {
+            color: $primary;
+          }
+        }
+
+        &--error {
+          color: $error;
+        }
+      }
+
+      .ui-checkbox {
+        grid-column: 1;
+      }
+
+      .info {
+        grid-column: 2;
+      }
+
+      &--disabled {
+        pointer-events: none;
+
+        .ui-checkbox, .info {
+          opacity: 0.5;
+        }
+
+        .info--primary, .info--error {
+          opacity: 1;
+        }
+      }
+    }
+
+    .info {
+      font-size: $smaller;
+    }
+
+    .empty-state {
+      font-family: $title-font-family;
+      color: $text-weaker;
+      justify-self: center;
+      align-self: center;
+      display: grid;
+    }
+  }
+
+  .button {
+    justify-self: center;
+  }
+
+}

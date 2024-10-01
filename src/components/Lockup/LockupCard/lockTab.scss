@@ -1,0 +1,156 @@
+@import "../../../assets/variables";
+
+.lockup-tab {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content min-content min-content;
+  padding: $spacing $spacing-smaller $spacing-medium;
+  grid-gap: $spacing-small;
+  height: 605px;
+
+  position: relative;
+
+  &--processing {
+    height: 605px;
+  }
+
+  @media (min-width: $tablet) {
+    padding: $spacing-medium $spacing-large;
+  }
+
+  &__inputs {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $spacing-smaller;
+    grid-auto-flow: rows;
+    background-color: $background;
+    border-radius: $border-radius-larger;
+    padding: $spacing-small $spacing-smaller;
+
+    @media (min-width: $tablet) {
+      padding: $spacing-medium $spacing-small;
+    }
+
+    .label {
+      font-family: $font-family;
+      font-size: $label;
+      color: $text-medium;
+
+      span {
+        color: $primary;
+        font-family: $title-font-family;
+      }
+    }
+
+    .divider {
+      height: 1px;
+      background-color: $text-weakest;
+    }
+
+    .dropdown-select {
+      .period-option {
+        font-family: $title-font-family;
+        color: $primary-dark;
+        cursor: pointer;
+        background-color: $background;
+
+        &:hover {
+          background-color: $background-pop-ups;
+          color: $primary;
+        }
+      }
+    }
+
+    .period {
+      display: grid;
+      grid-template-rows: min-content 50px min-content;
+      grid-gap: $spacing-smaller;
+    }
+
+    .amount {
+      display: grid;
+      grid-template-columns: 1fr 32px;
+      grid-auto-rows: min-content;
+      grid-gap: $tiniest;
+
+      .input {
+        grid-column: 1 / span 2;
+        height: 48px;
+        width: 100%;
+        font-weight: bold;
+        font-family: $title-font-family;
+        font-size: $medium;
+        background: rgba(0, 0, 0, 0);
+        color: $text-medium;
+        padding: $spacing-tiny $spacing-small;
+        border: $border;
+        border-radius: $border-radius-input;
+
+        &--error {
+          border: 1px solid $error;
+        }
+
+        &::placeholder {
+          color: $text-weaker;
+        }
+
+        &:focus {
+          outline: none;
+          border: 1px solid $primary-dark;
+        }
+      }
+
+      .disclaimer {
+        grid-column: 1;
+      }
+
+      .button {
+        justify-self: end;
+        grid-column: 2;
+      }
+    }
+  }
+
+  .ui-checkbox {
+    grid-gap: $spacing-small;
+
+    &__label {
+      font-family: $title-font-family;
+      color: $text-weak;
+      line-height: 15px;
+    }
+  }
+
+  .submit {
+    justify-self: center;
+  }
+
+  .disabled-disclaimer {
+    position: absolute;
+    background-color: rgba(197, 197, 197, 0.6);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+    backdrop-filter: blur(1.5px);
+
+    & span {
+      font-size: $medium;
+      font-family: $title-font-family;
+
+      color: $error;
+      text-align: center;
+      background-color: $background;
+      border-radius: 8px;
+      padding: 30px;
+    }
+
+    
+  }
+}

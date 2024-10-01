@@ -1,0 +1,59 @@
+@import "../../../assets/variables";
+
+.tab {
+    border-radius: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: $title-font-family;
+    font-weight: 700;
+    font-size: $smaller;
+    line-height: 19.36px;
+    border: none;
+    outline: none;
+    transition: background-color 250ms ease, box-shadow 250ms ease,
+    color 250ms ease, text-shadow 250ms ease;
+    padding: $spacing-small 0;
+    color: $text-weak;
+    background-color: $background;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    height: 46px;
+
+    &:hover:enabled {
+        color: $primary;
+        border-bottom: 2px solid $primary;
+    }
+
+    @media (min-width: $tablet) {
+        font-size: $medium;
+        height: 72px;
+    }
+
+    &--active {
+        color: white;
+        background-color: $primary;
+        border-bottom: 2px solid $primary;
+
+        &:hover:enabled {
+            color: white;
+            background-color: $primary;
+        }
+    }
+
+    &:first-child {
+        border-radius: $border-radius-input 0 0 0;
+    }
+
+    &:last-child {
+        border-radius: 0 $border-radius-input 0 0;
+    }
+
+    &:only-child {
+        border-radius: $border-radius-input $border-radius-input 0 0;
+    }
+
+    &:disabled{
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: default;
+    }
+}

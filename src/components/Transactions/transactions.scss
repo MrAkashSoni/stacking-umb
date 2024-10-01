@@ -1,0 +1,93 @@
+@import '../../assets/variables';
+
+.transactions-card {
+  display: grid;
+  grid-gap: $spacing-medium;
+  padding: $spacing-large $spacing-small;
+  position: relative;
+  width: 100%;
+  grid-template-rows: min-content auto;
+
+  @media (min-width: $desktop) {
+    grid-template-rows: min-content min-content auto;
+    padding: $spacing-large $spacing-large 0;
+    height: 378px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  &__header {
+    padding: 0;
+    width: 100%;
+    display: grid;
+    justify-content: start;
+    align-self: start;
+    align-content: center;
+    grid-gap: $spacing-tiny;
+    grid-auto-flow: column;
+
+    img {
+      cursor: pointer;
+      height: 18px;
+      width: 18px;
+
+      @media (min-width: $tablet) {
+        margin-top: 5px;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+
+  .titles {
+    display: none;
+
+    @media (min-width: $tablet) {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+
+      p {
+        font-family: $font-family;
+        color: $title;
+        font-size: $tiny;
+      }
+    }
+  }
+
+  .empty-state {
+    font-family: $font-family;
+    color: $text-weak;
+    text-align: center;
+    font-size: $tiny;
+  }
+
+  .wrapper {
+    grid-auto-rows: min-content;
+    scrollbar-color: $text-weaker transparent;
+    overflow: auto;
+    max-height: 500px;
+
+    @media (min-width: $tablet) {
+      max-height: initial;
+      padding-bottom: $spacing-small;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: $border-radius-large;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: $border-radius-large;
+      background-color: $text-weaker;
+    }
+
+    &::-webkit-scrollbar {
+      margin-left: $spacing-tiny;
+      width: $spacing-tiny;
+      height: $spacing-tiny;
+      background-color: transparent;
+    }
+  }
+}

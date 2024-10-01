@@ -1,0 +1,23 @@
+@import '../../../assets/variables';
+
+.tip {
+  position: fixed;
+  padding: $spacing-small;
+  max-width: 280px;
+  z-index: 4;
+  display: grid;
+  grid-gap: $spacing;
+
+  p {
+    font-family: $font-family;
+    font-size: $tiny;
+    color: $text-medium;
+  }
+
+  .actions {
+    display: grid;
+    align-self: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $spacing-tiniest;
+  }
+}

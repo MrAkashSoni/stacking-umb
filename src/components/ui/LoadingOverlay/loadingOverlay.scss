@@ -1,0 +1,20 @@
+.loading-overlay {
+  display: grid;
+  position: absolute;
+  background: white;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+
+  img {
+    width: 120px;
+    grid-row-start: 2;
+  }
+
+  .transaction {
+    grid-row-start: 3;
+  }
+}

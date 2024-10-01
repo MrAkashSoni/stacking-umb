@@ -1,0 +1,11 @@
+export { ReactComponent as DiscordIcon } from "./Discord_logo.svg";
+export { ReactComponent as GithubIcon } from "./Github_logo.svg";
+export { ReactComponent as MediumIcon } from "./Medium_logo.svg";
+export { ReactComponent as TelegramIcon } from "./Telegram_logo.svg";
+export { ReactComponent as TwitterIcon } from "./Twitter_logo.svg";
+export { ReactComponent as TrustWallet } from "./trustWalletIcon.svg";
+export { ReactComponent as MathWallet } from "./mathWalletIcon.svg";
+export { ReactComponent as SafePalWallet } from "./safePalWalletIcon.svg";
+export { ReactComponent as BinanceChainWallet } from "./binanceChainWalletIcon.svg";
+export { ReactComponent as TokenPocketWallet } from "./tokenPocketWalletIcon.svg";
+export { ReactComponent as MetamaskWallet } from "./metamaskWalletIcon.svg";

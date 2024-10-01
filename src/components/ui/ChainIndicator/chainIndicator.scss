@@ -1,0 +1,46 @@
+@import "../../../assets/variables";
+
+.chain-indicator {
+  display: grid;
+  max-width: calc(100% - #{$spacing});
+  justify-self: center;
+  grid-template-columns: 20px min-content;
+  border: $border-input;
+  border-radius: $border-radius-input;
+  padding: $spacing-smaller $spacing;
+  grid-gap: $spacing-small;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: $tablet) {
+    grid-gap: $spacing;
+    padding: $spacing-smaller $spacing-large;
+  }
+
+  &__icon {
+    width: 23px;
+  }
+
+  &__chain {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    grid-gap: $spacing-small;
+    align-items: center;
+
+    p {
+      font-family: $font-family;
+      font-size: $tinier;
+
+      @media (min-width: $tablet) {
+        font-size: $tiny;
+      }
+
+      span {
+        font-family: $title-font-family;
+        font-weight: bold;
+        color: $text-medium;
+      }
+    }
+  }
+}

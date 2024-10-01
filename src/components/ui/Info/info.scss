@@ -1,0 +1,61 @@
+@import "../../../assets/variables";
+
+.info-box {
+  position: relative;
+
+  .children {
+    cursor: pointer;
+  }
+
+  &__content {
+    z-index: 2;
+    width: 100vw;
+    max-width: 230px;
+    padding: $spacing-smaller;
+    display: none;
+    position: absolute;
+    background: $background-light;
+    box-shadow: $box-shadow;
+    border: $border;
+    border-radius: $border-radius-large;
+    top: calc(100% + 6px);
+
+    &--wrap {
+      width: unset;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    &--left {
+      left: 0;
+    }
+
+    &--center {
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    &--top {
+      top: unset;
+      bottom: calc(100% + 6px);
+    }
+
+    &--open {
+      display: grid;
+      grid-gap: $spacing-smaller;
+    }
+
+    p {
+      font-family: $font-family;
+      color: $text-medium;
+      font-size: $tinier;
+      line-height: $line-height;
+    }
+
+    .info-box-content-title, span {
+      font-weight: bold;
+    }
+  }
+}

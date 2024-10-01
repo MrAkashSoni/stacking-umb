@@ -1,0 +1,65 @@
+@import "../../../assets/variables";
+
+.unlocking-layer {
+  &__content {
+    display: grid;
+    grid-gap: $spacing-large;
+    grid-template-rows: repeat(2, min-content) 1fr;
+    padding: $spacing-medium 0;
+
+    .unlocking-amount {
+      display: grid;
+      color: $text-medium;
+      font-family: $title-font-family;
+      font-size: $medium;
+      grid-gap: $spacing;
+      grid-template-columns: max-content min-content;
+      align-items: center;
+      justify-self: center;
+
+      .currency {
+        display: grid;
+        grid-gap: $spacing;
+        grid-template-columns: max-content min-content;
+        align-items: center;
+
+        img {
+          width: 40px;
+        }
+      }
+    }
+
+    .return {
+      font-family: $font-family;
+      color: $text-medium;
+      font-size: $tiny;
+
+      span {
+        font-family: $title-font-family;
+        color: $primary;
+        font-size: $tiny;
+      }
+    }
+
+    & > p {
+      font-size: $tiny !important;
+      font-family: $font-family;
+    color: $text-weak;
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    .actions {
+      display: grid;
+      grid-gap: $spacing-small;
+      justify-content: center;
+      grid-auto-flow: row;
+
+      @media (min-width: $tablet) {
+        grid-auto-flow: column;
+      }
+    }
+  }
+}

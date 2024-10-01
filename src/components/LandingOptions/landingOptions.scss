@@ -1,0 +1,393 @@
+@import "../../assets/variables";
+
+.landing-options {
+  display: grid;
+  grid-gap: $spacing-large;
+
+  &--scrollable {
+    grid-template-rows: repeat(2, max-content) 680px;
+    position: relative;
+  }
+
+  .heading,
+  .subtitle {
+    text-align: center;
+    justify-self: center;
+  }
+
+  .subtitle {
+    font-family: $font-family;
+    size: $tiny;
+    color: $text-weak;
+    line-height: $line-height;
+    max-width: calc(100vw - #{$spacing});
+
+    @media (min-width: $tablet-large) {
+      max-width: 906px;
+    }
+  }
+
+  &__disclaimer {
+    font-family: $font-family;
+    font-size: $tinier;
+    color: $error;
+    text-align: start;
+    max-width: 280px;
+    font-weight: 300;
+
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: $tablet) {
+      max-width: initial;
+      font-size: $tiny;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-gap: $spacing-medium;
+    grid-auto-flow: row;
+    justify-content: center;
+
+    @media (min-width: $desktop) {
+      grid-auto-flow: unset;
+      gap: $spacing-small;
+      grid-template-columns: repeat(auto-fit, 528px);
+    }
+
+    .landing-option-card {
+      display: grid;
+      gap: $spacing-small;
+      padding: $spacing-small $spacing-smaller;
+      grid-auto-flow: row;
+      width: 100%;
+      max-width: 627px;
+      min-height: 500px;
+
+      @media (min-width: $tablet) {
+        gap: $spacing-medium;
+        padding: $spacing;
+        height: 652px;
+      }
+
+      @media (min-width: $desktop) {
+        max-width: 528px;
+      }
+
+      .icons {
+        display: grid;
+        grid-template-rows: min-content 1fr;
+        gap: $spacing-smaller;
+
+        @media (min-width: $mobile-large) {
+          grid-template-columns: repeat(3, 1fr);
+
+          .icon {
+            grid-column-start: 2;
+          }
+        }
+
+        @media (min-width: $tablet) {
+          grid-gap: $spacing;
+        }
+
+        .chain {
+          display: grid;
+          align-items: center;
+          align-self: center;
+          grid-gap: $spacing-tiny;
+          margin-left: $spacing-tiny;
+          grid-template-columns: min-content 1fr;
+          justify-items: center;
+
+          @media (min-width: $tablet) {
+            align-self: start;
+            margin-left: 0;
+            grid-gap: $spacing-smaller;
+            justify-items: start;
+          }
+
+          img {
+            height: 25px;
+            width: 25px;
+
+            @media (min-width: $tablet) {
+              height: 50px;
+              width: 50px;
+            }
+          }
+
+          p {
+            font-family: $font-family;
+            font-size: $tinier;
+            justify-self: start;
+
+            @media (min-width: $tablet) {
+              font-size: $tiny;
+            }
+          }
+        }
+
+        .icon {
+          width: 128px;
+          position: relative;
+          justify-self: center;
+
+          @media (min-width: $tablet) {
+            width: 142px;
+          }
+
+          .main {
+            margin-left: 20px;
+            height: 90px;
+            width: 90px;
+
+            @media (min-width: $tablet) {
+              height: 100px;
+              width: 100px;
+            }
+
+            border-radius: 100px;
+          }
+
+          .secondary {
+            width: 42px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+          }
+
+          &--sole {
+            display: grid;
+
+            img {
+              height: 90px;
+              width: 90px;
+
+              @media (min-width: $tablet) {
+                height: 100px;
+                width: 100px;
+              }
+            }
+
+            justify-items: center;
+          }
+        }
+      }
+
+      .title {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-gap: $spacing-tiny;
+
+        @media (min-width: $tablet) {
+          grid-gap: $spacing-small;
+        }
+
+        .heading {
+          grid-column: 2;
+        }
+
+        .icon {
+          margin-top: 7px;
+          justify-self: start;
+          height: 16px;
+          width: 16px;
+
+          @media (min-width: $tablet) {
+            margin-top: 13px;
+            height: 21px;
+            width: 21px;
+          }
+        }
+      }
+
+      .contract-scan-url {
+        font-family: $font-family;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: $smaller;
+        line-height: $line-height;
+        color: $highlight;
+        text-align: center;
+        justify-self: center;
+        max-width: 250px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        @media (min-width: $tablet) {
+          max-width: 340px;
+          font-size: $medium;
+        }
+      }
+
+      .pair {
+        max-width: 240px;
+        text-align: center;
+        justify-self: center;
+        font-size: $medium;
+        line-height: $line-height;
+      }
+
+      .info-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      .info {
+        display: grid;
+        width: 100%;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: $spacing-smaller;
+        align-items: center;
+
+        @media (min-width: $tablet) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__item {
+          font-family: $font-family;
+          text-align: end;
+          font-weight: bold;
+          font-size: $tinier;
+          line-height: $line-height;
+          color: #000000;
+
+          @media (min-width: $tablet) {
+            font-size: $medium;
+          }
+        }
+
+        &__title {
+          font-family: $font-family;
+          text-align: center;
+          font-size: $tinier;
+          line-height: $line-height;
+          width: 118px;
+          color: #000000;
+          text-align: start;
+
+          @media (min-width: $tablet) {
+            width: 100%;
+            font-size: $tiny;
+          }
+        }
+      }
+
+      .cta-container {
+        display: grid;
+        align-items: end;
+        justify-content: center;
+      }
+
+      .disclaimer-container {
+        color: $error;
+
+        font-family: $font-family;
+        font-size: $tinier;
+
+        min-height: 60px;
+
+        max-width: 400px;
+
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        text-align: center;
+
+        @media (min-width: $tablet) {
+          font-size: $tiny;
+        }
+      }
+    }
+
+    &--scroll {
+      grid-template-columns: min-content;
+      position: relative;
+      cursor: pointer;
+      grid-auto-flow: column;
+      align-content: center;
+      grid-template-rows: initial;
+      justify-content: initial;
+      grid-column-gap: 0;
+      width: $content-tablet;
+      justify-self: center;
+      justify-items: center;
+      margin-left: calc(-1 * #{$spacing});
+      width: 100vw;
+
+      @media (min-width: $tablet) {
+        margin-left: calc(-1 * #{$spacing-larger});
+        max-width: $content-tablet;
+      }
+
+      @media (min-width: $desktop) {
+        $parent-width: 100%;
+        $border: calc((100vw - #{$parent-width}) / 2);
+        $scroll-width: calc(100vw - #{$border} + 15px);
+        height: 680px;
+        width: $scroll-width;
+        max-width: initial;
+        position: absolute;
+        left: 35px;
+        bottom: 0;
+        justify-items: initial;
+        justify-self: initial;
+      }
+
+      @media (min-width: $desktop-k) {
+        width: initial;
+        overflow: initial !important;
+        left: -425px;
+        justify-content: start;
+      }
+
+      .landing-option-card {
+        margin-right: $spacing-small;
+        user-select: none;
+        width: 250px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @media (min-width: $tablet) {
+          width: 500px;
+          max-width: $content-tablet;
+        }
+      }
+
+      &:after,
+      &:before {
+        content: "";
+        position: sticky;
+        top: 0;
+        right: 0;
+        width: $spacing-medium;
+        height: 100%;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0), white);
+        z-index: 5;
+
+        @media (min-width: $desktop-k) {
+          display: none;
+        }
+      }
+
+      &:before {
+        left: 0;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0), white);
+      }
+    }
+  }
+}

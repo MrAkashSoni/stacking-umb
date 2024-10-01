@@ -1,0 +1,212 @@
+@import '../../assets/variables';
+
+.withdraw-card {
+  display: grid;
+  grid-template-rows: min-content  1fr;
+  height: 500px;
+
+  &--processing {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  &__header {
+    height: 73px;
+    width: 100%;
+    background: $primary;
+    text-align: center;
+    padding: $spacing 0;
+    font-family: $title-font-family;
+    font-size: $medium;
+    color: white;
+    font-weight: 700;
+    border-radius: $border-radius-larger $border-radius-larger 0 0;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #14f1d9 -4.23%, #3672f8 100.92%);
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-gap: $spacing-medium;
+    width: 100%;
+    height: 100%;
+    padding: $medium $spacing-smaller $larger;
+    max-width: 460px;
+    justify-self: center;
+
+    @media (min-width: $tablet) {
+      max-width: initial;
+      padding: $spacing $spacing-large $spacing-large;
+    }
+
+    @media (min-width: $desktop) {
+      padding: $spacing-medium;
+      grid-template-rows: 70px min-content 1fr;
+    }
+
+    .balance {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 50px;
+
+      @media (min-width: $tablet) {
+        grid-template-columns: 1fr 75px;
+      }
+
+      &__wrapper {
+        display: grid;
+        grid-gap: $tinier;
+        align-items: center;
+        grid-template-columns: 20px 1fr;
+
+        @media (min-width: $tablet) {
+          grid-gap: $small;
+        }
+
+        .text {
+          display: grid;
+          grid-template-rows: auto auto;
+
+          @media (min-width: $mobile-large) {
+            grid-template-rows: auto;
+            grid-template-columns: max-content max-content;
+            grid-gap: $spacing-tiny;
+          }
+
+          p {
+            font-family: $title-font-family;
+            color: $text-medium;
+            font-size: $tiny;
+            line-height: $line-height;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .icon {
+        width: 50px;
+        position: relative;
+        justify-self: center;
+        align-self: center;
+
+        .main {
+          height: 40px;
+          width: 40px;
+          border-radius: 40px;
+        }
+
+        .secondary {
+          width: 20px;
+          position: absolute;
+          bottom: -4px;
+          right: 0;
+        }
+
+        @media (min-width: $mobile-large) {
+          width: 75px;
+
+          .main {
+            height: 70px;
+            width: 70px;
+            border-radius: 70px;
+          }
+          .secondary {
+            width: 30px;
+            position: absolute;
+            bottom: -4px;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .form {
+      &__input {
+        position: relative;
+        display: grid;
+        grid-gap: $spacing-tiny;
+        background-color: $background;
+        border-radius: $border-radius-larger;
+        padding: $spacing $spacing $spacing-small;
+
+        .disclaimer-input {
+          display: grid;
+          grid-gap: $spacing-smaller;
+
+          @media (min-width: $tablet) {
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 145px;
+          }
+
+          .insert-disclaimer {
+            font-family: $font-family;
+            font-size: $tinier;
+            color: $text-medium;
+            line-height: $line-height;
+
+            @media (min-width: $tablet) {
+              font-size: $tiny;
+            }
+          }
+
+          input {
+            width: 100%;
+            font-weight: bold;
+            font-family: $title-font-family;
+            font-size: $medium;
+            background: rgba(0, 0, 0, 0);
+            color: $text-medium;
+            padding: $spacing-tiny $spacing-small;
+            border: $border;
+            border-radius: $border-radius;
+
+            &::placeholder {
+              color: $text-weaker;
+            }
+
+            &:focus {
+              outline: none;
+              border: 1px solid $highlight;
+              box-shadow: 0px 0px 9px 1.2px rgba(6, 243, 152, 0.4);
+            }
+          }
+        }
+
+        .button-container {
+          display: grid;
+          width: 100%;
+          grid-template-columns: 1fr min-content;
+          align-items: center;
+
+          .errors {
+            font-family: $font-family;
+            right: $spacing;
+            color: $error;
+            font-size: $tinier;
+          }
+
+          .button {
+            grid-column-start: 2;
+          }
+        }
+      }
+
+      &__actions {
+        display: grid;
+        grid-gap: $spacing;
+        justify-items: center;
+        align-self: end;
+      }
+    }
+  }
+}

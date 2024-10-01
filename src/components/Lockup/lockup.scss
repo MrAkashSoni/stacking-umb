@@ -1,0 +1,215 @@
+@import '../../assets/variables';
+
+.lockup {
+  display: grid;
+  grid-gap: $spacing-medium;
+
+  @media (min-width: $desktop) {
+    grid-gap: $spacing-max;
+  }
+
+  a {
+    text-decoration: none;
+    color: $highlight;
+    font-weight: bold;
+    font-size: $tinier;
+
+    @media (min-width: $tablet) {
+      font-size: $tiny;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__welcome-message {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    grid-gap: $spacing-larger;
+    width: 100%;
+
+    @media (min-width: $tablet) and (max-width: $desktop) {
+      width: $content-tablet;
+    }
+
+    .title {
+      display: grid;
+      grid-gap: $spacing-small;
+      justify-content: center;
+      justify-items: center;
+
+      .subtitle {
+        font-family: $title-font-family;
+        line-height: $line-height;
+        font-size: $smaller;
+        color: $primary;
+        text-align: center;
+      }
+    }
+
+    .lockup-info-container {
+      display: grid;
+      justify-self: center;
+      grid-gap: $spacing;
+      grid-template-rows: repeat(2, max-content);
+      width: 294px;
+
+      @media (min-width: $tablet) {
+        width: $content-tablet;
+      }
+
+      @media (min-width: $desktop) {
+        width: 100%;
+        grid-template-columns: repeat(2, 400px);
+      }
+    }
+
+    .lockup-info {
+      display: grid;
+      max-width: $content;
+      padding: $spacing-smaller;
+      width: 100%;
+      height: 180px;
+      border-bottom: 8px solid $highlight;
+
+      &--token-contracts {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr;
+        grid-gap: $spacing;
+        align-items: center;
+
+        .divisor {
+          width: 1px;
+          height: 60px;
+          background-color: $highlight;
+          border: 1px solid;
+          border-image-source: linear-gradient(180deg, rgba(6, 243, 152, 0) 0%, #06F398 47.74%, rgba(6, 243, 152, 0) 100%);
+          filter: blur(2px);
+          -webkit-filter: blur(2px);
+        }
+      }
+
+      @media (min-width: $tablet) {
+        width: 100%;
+      }
+
+      @media (min-width: $desktop) {
+        padding: $spacing-medium;
+      }
+
+      .text {
+        font-family: $font-family;
+        align-self: center;
+        text-align: center;
+        max-width: 888px;
+        font-size: $tinier;
+        line-height: $line-height;
+
+        @media (min-width: $tablet) {
+          font-size: $tiny;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    width: calc(100vw - 24px);
+    padding: 0;
+    justify-items: center;
+    grid-template-rows: repeat(3, max-content);
+    justify-content: center;
+    justify-self: center;
+    grid-gap: $spacing-medium;
+    grid-template-columns: 1fr;
+    grid-template-rows: 676px 525px 1fr;
+
+    @media (min-width: $desktop) {
+      width: 100%;
+      margin: 0;
+      max-width: $content;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 676px 1fr;
+    }
+  }
+
+  .lockup-card, .lockup-wallet-card {
+    width: 100%;
+    max-width: calc(100vw - #{$spacing});
+
+    @media (min-width: $tablet) {
+      width: $content-tablet;
+    }
+  }
+
+  .balance {
+    display: grid;
+    align-items: center;
+    grid-template-rows: 50px min-content;
+    grid-template-columns: 1fr;
+    grid-gap: $spacing-small;
+
+    @media (min-width: $tablet) {
+      grid-gap: unset;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 75px;
+    }
+
+    &__wrapper {
+      display: grid;
+      grid-gap: $tinier;
+      align-items: center;
+      grid-template-columns: 20px 1fr;
+
+      @media (min-width: $tablet) {
+        grid-gap: $small;
+      }
+
+      .text {
+        display: grid;
+        grid-template-rows: auto auto;
+
+        @media (min-width: $mobile-large) {
+          grid-template-rows: auto;
+          grid-template-columns: max-content max-content;
+          grid-gap: $spacing-tiny;
+        }
+
+        p {
+          font-family: $title-font-family;
+          color: $text-medium;
+          font-size: $tiny;
+          line-height: $line-height;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .icon {
+      width: 50px;
+      justify-self: start;
+      align-self: center;
+      grid-row: 1;
+
+      @media (min-width: $tablet) {
+        justify-self: center;
+        width: 75px;
+        grid-column: 2;
+      }
+    }
+  }
+
+  .disclaimer {
+    font-family: $font-family;
+    color: $text-weak;
+    font-size: $tinier;
+
+    &--error {
+      color: $error;
+    }
+  }
+}

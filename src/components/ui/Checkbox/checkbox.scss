@@ -1,0 +1,56 @@
+@import "../../../assets/variables";
+
+.ui-checkbox {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 25px max-content;
+  grid-template-rows: 1fr;
+  position: relative;
+  grid-gap: $spacing-smaller;
+  align-items: center;
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  input {
+    display: none;
+  }
+
+  img {
+    position: absolute;
+    top: 5px;
+    left: 3.5px;
+  }
+
+  &:hover {
+    .ui-checkbox__box {
+      box-shadow: $box-shadow;
+      border: 1px solid $primary;
+
+      &--checked {
+        box-shadow: none;
+        border: $border-checked;
+      }
+    }
+  }
+
+  &__box {
+    border: $border-input;
+    width: 25px;
+    height: 25px;
+    border-radius: $border-radius-input;
+
+    &--checked {
+      border: $border-checked;
+    }
+  }
+
+  &__label {
+    font-family: $font-family;
+    color: $text-weak;
+    user-select: none;
+  }
+}

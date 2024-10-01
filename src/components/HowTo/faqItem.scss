@@ -1,0 +1,133 @@
+@import "../../assets/variables";
+
+.faq-item {
+  display: grid;
+  grid-gap: $spacing-medium;
+  width: calc(100vw - 24px);
+  max-width: $content;
+  transition: grid-gap 0.4s ease-in;
+
+  @media (min-width: $desktop) {
+    width: calc(100vw - 64px);
+  }
+
+  &--closed {
+    grid-gap: 0px;
+    transition: grid-gap 0.4s ease-out;
+  }
+
+  .faq-button {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #eeeeee;
+    outline: none;
+    cursor: pointer;
+
+    padding: $spacing $spacing-smaller;
+
+    @media (min-width: $desktop) {
+      padding: $spacing-large $spacing;
+    }
+  }
+
+  &:not(&--closed) {
+    & > div {
+      margin: 0 $spacing-smaller $spacing;
+
+      @media (min-width: $desktop) {
+        margin: 0 $spacing $spacing-large;
+      }
+    }
+  }
+
+  &__header {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: $spacing-medium;
+    width: 100%;
+
+    .heading {
+      text-align: start;
+
+      &--highlighted {
+        background-color: $highlight;
+        color: white;
+      }
+    }
+
+    .button {
+      justify-self: end;
+
+      img {
+        width: 22px;
+
+        @media (min-width: $desktop) {
+          width: initial;
+        }
+      }
+    }
+  }
+
+  &__text {
+    font-family: $font-family;
+    font-size: $tiny;
+    line-height: $line-height;
+    color: $text-medium;
+    width: 100%;
+
+    &--highlight {
+      background-color: $highlight;
+      color: white;
+    }
+
+    &--bold {
+      font-weight: bold;
+    }
+
+    a,
+    a > span {
+      font-family: $title-font-family;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: $tinier;
+      line-height: 19px;
+      color: $highlight;
+
+      @media (min-width: $desktop) {
+        font-size: $tiny;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    img {
+      box-shadow: $box-shadow;
+      width: 80%;
+
+      @media (min-width: $tablet) {
+        width: 40%;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+  }
+}
